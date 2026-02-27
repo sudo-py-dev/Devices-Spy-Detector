@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NoTrace</string>
+    <string name="settings">הגדרות</string>
+    <string name="action_about">אודות</string>
+    <string name="button_start_scanning">התחל סריקה</string>
+    <string name="button_stop_scanning">עצור סריקה</string>
+    <string name="description_empty_state">סריקה פעילה עוזרת לך למצוא מכשירי ריגול נסתרים או משקפי מציאות מדומה בקרבת מקום.</string>
+    <string name="description_value_add_text">הפעל סריקה כדי לקבל התראות בזמן אמת.</string>
+    <string name="button_start_scanning_fab">התחל סריקה</string>
+    <string name="button_move_to_background">המשך ברקע</string>
+    <string name="status_scanning_active">סורק מכשירי ריגול בסביבה…</string>
+    <string name="title_category_about">מידע</string>
+    <string name="scanning">מחפש מכשירי ריגול בקרבת מקום…</string>
+    <string name="not_scanning">הסריקה טרם התחילה</string>
+    <string name="clear">נקה</string>
+    <string name="export">ייצוא</string>
+    <string name="menu_action_clear_history">ניקוי היסטוריה</string>
+    <string name="menu_action_export_history">ייצוא היסטוריה</string>
+    <string name="alert_devices_detected">ייתכן שיש מכשירי ריגול בקרבת מקום!</string>
+    <string name="description_main_info">מתריע על מכשירי ריגול פוטנציאליים. הערה: גם משקפי VR עשויים להפעיל התראות.</string>
+    <string name="alert_warning_title">אנא קרא/י זאת</string>
+    <string name="alert_warning_message">השתמש/י בתוצאות כמדריך בלבד. יש לאמת כל ממצא ולכבד את החוק המקומי.</string>
+    <string name="title_category_scanning_settings">הגדרות סריקה</string>
+    <string name="title_foreground">סריקה ברקע</string>
+    <string name="description_background_scanning">המשך לחפש מכשירי ריגול גם כשהאפליקציה סגורה.</string>
+    <string name="summary_foreground">חפש מכשירים בזמן השימוש באפליקציות אחרות.</string>
+    <string name="title_cooldown">תדירות התראות</string>
+    <string name="description_alert_cooldown">תקבל/י התראה לכל היותר כל %1$d שניות.</string>
+    <string name="title_threshold">רגישות הסריקה</string>
+    <string name="description_detection_range">קבע עד כמה המכשיר צריך להיות קרוב כדי להפעיל התראה.</string>
+    <string name="sensitivity_low">רגישות נמוכה: מזהה רק מכשירים קרובים מאוד.</string>
+    <string name="sensitivity_medium">רגישות בינונית: טווח זיהוי סטנדרטי.</string>
+    <string name="sensitivity_high">רגישות גבוהה: מזהה מכשירים רחוקים (יותר התראות שווא).</string>
+    <string name="title_category_notifications">התראות</string>
+    <string name="title_notifications">התראות</string>
+    <string name="description_notifications">קבל/י התראה כאשר מזוהים מכשירי ריגול בקרבת מקום.</string>
+    <string name="summary_notifications">רטט והצגת התראה עבור אזהרות זיהוי.</string>
+    <string name="label_recent_detections">היסטוריית זיהויים</string>
+    <string name="title_logging">הצג היסטוריית זיהוי</string>
+    <string name="description_detection_history">הצג רשימה של כל הזיהויים במסך הבית.</string>
+    <string name="summary_logging">הפעל מעקב היסטוריה עבור מכשירים שזוהו.</string>
+    <string name="summary_cooldown">התראה לכל היותר כל %1$d שניות.</string>
+    <string name="summary_share_history">שתף את היסטוריית הזיהויים כקובץ טקסט (TXT)</string>
+    <string name="summary_clear_history">מחק לצמיתות את כל הזיהויים השמורים</string>
+    <string name="nothing_to_export">אין מה לייצא עדיין – התחל/י סריקה כדי לראות זיהויים כאן.</string>
+    <string name="nothing_to_clear">אין מה לנקות – יומן ההיסטוריה כבר ריק.</string>
+    <string name="label_detection_history">יומן פעילות</string>
+    <string name="text_empty_history">טרם נמצאו זיהויי מכשירים.</string>
+    <string name="title_device_id_manager">ניהול מזהי מכשירים</string>
+    <string name="label_saved_ids">חתימות זיהוי מוכרות</string>
+    <string name="label_nearby_ids">גילויים בסביבה</string>
+    <string name="label_add_manual">הוספה ידנית</string>
+    <string name="hint_add_id_manual">0x01AB</string>
+    <string name="btn_add">הוסף</string>
+    <string name="no_saved_ids">אין עדיין חתימות זיהוי שמורות</string>
+    <string name="no_nearby_ids">לא זוהו מכשירים לא ידועים לאחרונה</string>
+    <string name="action_clear_all">נקה הכל</string>
+    <string name="confirm_clear_all">להסיר את כל מזהי המכשירים השמורים?</string>
+    <string name="error_invalid_id">נא להזין מזהה תקין (למשל: 0x01AB)</string>
+    <string name="error_id_already_exists">מזהה זה כבר שמור במערכת</string>
+    <string name="id_added">התווסף %1$s</string>
+    <string name="hit_count">%1$d זיהויים</string>
+    <string name="discovery_secondary_info">%1$s (אות: %2$d)</string>
+    <string name="discovery_secondary_info_no_name">עוצמת אות: %1$d</string>
+    <string name="discovery_secondary_infoNoName">עוצמת אות: %1$d</string>
+    <string name="dialog_add_id_title">הוספת מזהה מכשיר</string>
+    <string name="app_description_main">מגן הפרטיות שלך – זהה מכשירי ריגול נסתרים באמצעות סריקת Bluetooth</string>
+    <string name="title_method">שיטת הזיהוי</string>
+    <string name="description_detection_method">השוואת מזהי יצרן ושמות מכשירים מול רשימה של מותגי ריגול מוכרים.</string>
+    <string name="pref_language_title">שפה</string>
+    <string name="pref_language_summary">בחירת שפת האפליקציה</string>
+    <string name="notification_title_devices_detected">מכשירי ריגול זוהו בקרבת מקום</string>
+
+    <string-array name="pref_language_entries">
+        <item>ברירת מחדל של המערכת</item>
+        <item>גרמנית (גרמניה)</item>
+        <item>גרמנית (שוויץ)</item>
+        <item>רוסית</item>
+        <item>עברית</item>
+    </string-array>
+
+    <string-array name="pref_language_values">
+        <item></item>
+        <item>de</item>
+        <item>de-CH</item>
+        <item>ru</item>
+        <item>iw</item>
+    </string-array>
+    <string name="notification_channel_alerts_name">התראות</string>
+    <string name="notification_channel_alerts_description">התראות על זיהוי מכשירים</string>
+    <string name="notification_channel_scanner_name">סורק</string>
+    <string name="notification_channel_scanner_description">מצב סריקה ברקע</string>
+    <string name="notification_detected_title">@string/notification_title_devices_detected</string>
+    <string name="notification_detected_text">%1$s בקרבת מקום (אות: %2$d)</string>
+    <string name="notification_expanded_text">מכשיר: %1$s\nחברה מייצרת: %4$s\nאות: %2$d</string>
+    <string name="notification_unknown_device">מכשיר לא ידוע</string>
+    <string name="notification_service_title">סורק בקרבת מקום</string>
+    <string name="notification_service_text">הקש/י כדי לפתוח</string>
+    <string name="action_stop">עצור</string>
+    <string name="alert_battery_optimization_title">אופטימיזציה ברקע</string>
+    <string name="alert_battery_optimization_message">לסריקת רקע אמינה, נא לבטל את אופטימיזציית הסוללה עבור אפליקציה זו.</string>
+    <string name="button_action_disable_restrictions">ביטול מגבלות</string>
+    <string name="battery_optimization_title">אופטימיזציה ברקע</string>
+    <string name="action_disable_restrictions">פתח הגדרות</string>
+    <string name="detection_reason_name_contains">שם המכשיר מכיל \"%1$s\"</string>
+    <string name="detection_reason_company_id_match">%1$s (מזהה: %2$s)</string>
+    <string name="label_company_unknown">לא ידוע (%1$s)</string>
+    <string name="label_unknown_device">לא ידוע</string>
+    <string name="clipboard_copied">הועתק ללוח!</string>
+    <string name="error_log_copied">יומן השגיאות הועתק ללוח!</string>
+    <string name="clipboard_label_log_line">SpyDetectorLogLine</string>
+    <string name="toast_bluetooth_required">נא להפעיל Bluetooth כדי להתחיל בסריקה.</string>
+    <string name="toast_bluetooth_not_supported">מכשירך אינו תומך ב-Bluetooth – אפליקציה זו לא תעבוד.</string>
+    <string name="action_restart_app">הפעל מחדש</string>
+    <string name="action_copy_log">העתק יומן</string>
+    <string name="error_details_label">הצג פרטים</string>
+    <string name="dialog_permissions_title">נדרשות הרשאות</string>
+    <string name="dialog_permissions_message">כדי למצוא מכשירים בסביבה, האפליקציה זקוקה לגישה ל-Bluetooth ולמיקום. הקש/י על \'פתח הגדרות\' ואשר/י את שניהם.</string>
+    <string name="dialog_action_open_settings">פתח הגדרות</string>
+    <string name="dialog_action_cancel">לא עכשיו</string>
+    <string name="dialog_clear_log_title">למחוק את ההיסטוריה?</string>
+    <string name="dialog_clear_log_message">פעולה זו תמחק את כל הזיהויים השמורים. לא ניתן יהיה לשחזרם.</string>
+    <string name="dialog_action_clear_confirm">כן, מחק</string>
+    <string name="toast_log_cleared">בוצע! ההיסטוריה שלך נוקתה.</string>
+    <string name="chooser_export_log">שתף את היסטוריית הזיהויים שלך</string>
+    <string name="toast_export_error">לא ניתן לשתף את היומן. נא לנסות שוב.</string>
+    <string name="toast_scanning_in_background">הסריקה ממשיכה לפעול ברקע.</string>
+    <string name="label_id_prefix">מזהה: %1$s</string>
+    <string name="label_hex_prefix">פרטים טכניים: %1$s</string>
+    <string name="label_type_prefix">סוג מכשיר: %1$s</string>
+    <string name="label_potential_prefix">מוכר כ: %1$s</string>
+    <string name="action_theme">עיצוב</string>
+    <string name="theme_system">ברירת מחדל של המערכת</string>
+    <string name="theme_light">בהיר</string>
+    <string name="theme_dark">כהה</string>
+    <string name="error_occurred_title">אופס – משהו השתבש</string>
+    <string name="error_occurred_description">האפליקציה נתקלה בבעיה לא צפויה ונעצרה. אל דאגה – ההיסטוריה השמורה שלך בטוחה. הקש/י על \'הפעל מחדש\' כדי לנסות שוב.</string>
+    <string name="title_github">קוד מקור</string>
+    <string name="summary_github">צפה בקוד המקור ב-GitHub</string>
+    <string name="reset_success">מסד הנתונים אופס לברירת המחדל</string>
+    <string name="error_unknown">שגיאה לא ידועה</string>
+    <string name="type_apple">Apple</string>
+    <string name="type_samsung">Samsung</string>
+    <string name="type_tile">Tile</string>
+    <string name="type_other">אחר</string>
+    <string name="hint_manufacturer_id">מזהה יצרן (Hex, למשל 0x004C)</string>
+    <string name="hint_manufacturer_name">שם יצרן (למשל Apple, Inc.)</string>
+    <string name="hint_brand_name">שם מותג/נפוץ (למשל AirTag)</string>
+    <string name="hint_compatible_devices">מכשירים תואמים (מופרדים בפסיק)</string>
+    <string name="label_tracker_type">סוג טראקר</string>
+    <string name="error_file_io">שגיאת קריאה/כתיבה מקובץ</string>
+    <string name="detection_reason_signature_match">זוהתה חתימת מכשיר ריגול מוכרת</string>
+    <string name="label_rssi_unit">אות: %1$d</string>
+    <string name="label_maker_prefix">חברה מייצרת: %1$s</string>
+    <string name="not_available">N/A</string>
+    <string name="device_list_format">דגמים: %1$s</string>
+    <string name="discovery_secondary_info_v2">מזהה: %1$s | אות: %2$d</string>
+    <string name="dialog_edit_tracker_title">עריכת טראקר</string>
+    <string name="confirm_delete_tracker">האם את/ה בטוח/ה שברצונך למחוק הגדרת טראקר זו?</string>
+    <string name="delete_success">הטראקר נמחק</string>
+    <string name="update_success">הטראקר עודכן</string>
+    <string name="company_unknown_plain">חברה לא ידועה</string>
+    <string name="default_discovered_name">טראקר חדש שהתגלה</string>
+    <string name="clipboard_label_log">clipboardLabelLog</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_title">ברוכים הבאים ל-NoTrace</string>
+    <string name="onboarding_description">עוזר הפרטיות שלך למציאת מכשירי ריגול וטראקרים נסתרים בקרבת מקום. הישאר בטוח ומעודכן.</string>
+    <string name="onboarding_warning_title">אזהרת בטיחות חשובה</string>
+    <string name="onboarding_warning_text">אפליקציה זו היא כלי גילוי ועלולה מדי פעם להציג התראות שווא (כמו משקפי VR או מכשירים חכמים מסוימים). בשימוש באפליקציה זו, את/ה מסכים/ה להשתמש במידע באחריות ולא להטריד או לתקוף אף אחד על סמך תוצאות הזיהוי.</string>
+    <string name="onboarding_agreement_checkbox">אני מסכים/ה להשתמש באפליקציה זו באחריות ולא אשתמש בה כדי לפגוע באחרים.</string>
+    <string name="onboarding_button_accept">בואו נתחיל</string>
+
+    <!-- Privacy Policy & Licenses -->
+    <string name="title_privacy">מדיניות פרטיות</string>
+    <string name="summary_privacy">איך אנחנו מטפלים בנתונים שלך</string>
+    <string name="title_licenses">רישיונות קוד פתוח</string>
+    <string name="summary_licenses">ספריות בשימוש ב-NoTrace</string>
+</resources>

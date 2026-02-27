@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  activity_crash.xml – M3 Compliant
+  • Edge-to-edge: fitsSystemWindows=false
+  • Error state: 80dp icon (colorError), HeadlineSmall title, BodyMedium description
+  • Restart: Filled Button 40dp height, 20dp corner radius (full pill)
+  • Copy Log: Outlined Button (neutral action)
+  • Stack trace: wrapped in surfaceContainerHigh card, monospace Body Small
+-->
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false"
+    tools:context=".ui.error.CrashActivity">
+
+    <!-- Small TopAppBar – error screen -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorSurface"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Scrollable content -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/content_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            android:paddingBottom="32dp">
+
+            <!-- Error illustration: 80dp, colorError, centered -->
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="24dp"
+                android:src="@drawable/ic_warning"
+                app:tint="?attr/colorError"
+                android:contentDescription="@null" />
+
+            <!-- HeadlineSmall – error title -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/error_occurred_title"
+                android:textAppearance="?textAppearanceHeadlineSmall"
+                android:textColor="?attr/colorOnSurface" />
+
+            <!-- Body Medium – description -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center"
+                android:text="@string/error_occurred_description"
+                android:textAppearance="?textAppearanceBodyMedium"
+                android:textColor="?attr/colorOnSurfaceVariant" />
+
+            <!-- Filled Button – primary CTA (Restart) -->
+            <!-- M3 spec: 40dp height, full corner (20dp), Label Large -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_restart"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                app:cornerRadius="20dp"
+                android:layout_marginTop="32dp"
+                android:textAppearance="?textAppearanceLabelLarge"
+                android:text="@string/action_restart_app" />
+
+            <!-- Outlined Button – secondary (copy log) -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_copy_log"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                app:cornerRadius="20dp"
+                android:layout_marginTop="12dp"
+                android:textAppearance="?textAppearanceLabelLarge"
+                android:text="@string/action_copy_log" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Expandable stack trace toggle -->
+            <TextView
+                android:id="@+id/text_details_toggle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:minHeight="48dp"
+                android:paddingVertical="8dp"
+                android:text="@string/error_details_label"
+                android:textAppearance="?textAppearanceTitleMedium"
+                android:textColor="?attr/colorOnSurface"
+                app:drawableEndCompat="@android:drawable/arrow_down_float"
+                app:drawableTint="?attr/colorOnSurfaceVariant" />
+
+            <!-- Stack trace card (surfaceContainerHigh, 8dp corners) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_stack_trace"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:visibility="gone"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="?attr/colorSurfaceContainerHigh">
+
+                <TextView
+                    android:id="@+id/text_stack_trace"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:padding="16dp"
+                    android:textAppearance="?textAppearanceBodySmall"
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    tools:text="java.lang.RuntimeException: Test Crash&#10;&#9;at com.spydetect.edapps.MainActivity.onCreate(MainActivity.kt:21)" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

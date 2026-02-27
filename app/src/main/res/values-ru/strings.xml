@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NoTrace</string>
+    <string name="settings">Настройки</string>
+    <string name="action_about">О приложении</string>
+    <string name="button_start_scanning">Начать сканирование</string>
+    <string name="button_stop_scanning">Остановить сканирование</string>
+    <string name="description_empty_state">Активное сканирование позволяет обнаружить скрытые шпионские устройства или VR-гарнитуры поблизости.</string>
+    <string name="description_value_add_text">Включите сканирование для получения оповещений в реальном времени.</string>
+    <string name="button_start_scanning_fab">Начать сканирование</string>
+    <string name="button_move_to_background">В фоновый режим</string>
+    <string name="status_scanning_active">Поиск шпионских устройств поблизости…</string>
+    <string name="title_category_about">О приложении</string>
+    <string name="scanning">Ищем шпионские устройства поблизости…</string>
+    <string name="not_scanning">Сканирование еще не запущено</string>
+    <string name="clear">Очистить</string>
+    <string name="export">Экспорт</string>
+    <string name="menu_action_clear_history">Очистить историю</string>
+    <string name="menu_action_export_history">Экспортировать историю</string>
+    <string name="alert_devices_detected">Рядом могут быть шпионские устройства!</string>
+    <string name="description_main_info">Предупреждает о возможных шпионских устройствах. Примечание: VR-гарнитуры также могут вызывать оповещения.</string>
+    <string name="alert_warning_title">Пожалуйста, прочтите</string>
+    <string name="alert_warning_message">Используйте результаты только для ознакомления. Всегда проверяйте находки и соблюдайте местные законы.</string>
+    <string name="title_category_scanning_settings">Настройки сканирования</string>
+    <string name="title_foreground">Фоновое сканирование</string>
+    <string name="description_background_scanning">Продолжать поиск устройств даже при закрытом приложении.</string>
+    <string name="summary_foreground">Поиск устройств во время использования других приложений.</string>
+    <string name="title_cooldown">Частота оповещений</string>
+    <string name="description_alert_cooldown">Ждите не менее %1$d секунд между уведомлениями.</string>
+    <string name="title_threshold">Чувствительность сканера</string>
+    <string name="description_detection_range">Настройте, насколько близко должно быть устройство для срабатывания оповещения.</string>
+    <string name="sensitivity_low">Низкая чувствительность: обнаружение только очень близких устройств.</string>
+    <string name="sensitivity_medium">Средняя чувствительность: стандартная дальность обнаружения.</string>
+    <string name="sensitivity_high">Высокая чувствительность: обнаружение удаленных устройств (возможны ложные срабатывания).</string>
+    <string name="title_category_notifications">Уведомления</string>
+    <string name="title_notifications">Оповещения</string>
+    <string name="description_notifications">Получать уведомления при обнаружении шпионских устройств.</string>
+    <string name="summary_notifications">Вибрация и уведомление при обнаружении устройств.</string>
+    <string name="label_recent_detections">История обнаружений</string>
+    <string name="title_logging">Показывать историю обнаружений</string>
+    <string name="description_detection_history">Список всех обнаруженных устройств на главном экране.</string>
+    <string name="summary_logging">Включить отслеживание истории для обнаруженных устройств.</string>
+    <string name="summary_cooldown">Оповещать не чаще чем раз в %1$d сек.</string>
+    <string name="summary_share_history">Поделиться историей обнаружений в виде текстового файла (.txt)</string>
+    <string name="summary_clear_history">Безвозвратно удалить всю историю обнаружений</string>
+    <string name="nothing_to_export">Пока нечего экспортировать — запустите сканирование, чтобы увидеть результаты.</string>
+    <string name="nothing_to_clear">Нечего очищать — история уже пуста.</string>
+    <string name="label_detection_history">Журнал активности</string>
+    <string name="text_empty_history">Обнаружений пока нет.</string>
+    <string name="title_device_id_manager">Менеджер ID устройств</string>
+    <string name="label_saved_ids">Сохраненные ID</string>
+    <string name="label_nearby_ids">Обнаружены поблизости</string>
+    <string name="label_add_manual">Добавить вручную</string>
+    <string name="hint_add_id_manual">0x01AB</string>
+    <string name="btn_add">Добавить</string>
+    <string name="no_saved_ids">Нет сохраненных ID устройств</string>
+    <string name="no_nearby_ids">Новых устройств пока не обнаружено</string>
+    <string name="action_clear_all">Очистить все</string>
+    <string name="confirm_clear_all">Удалить все сохраненные ID устройств?</string>
+    <string name="error_invalid_id">Введите корректный ID (например, 0x01AB)</string>
+    <string name="error_id_already_exists">Этот ID уже сохранен</string>
+    <string name="id_added">Добавлено: %1$s</string>
+    <string name="hit_count">Обнаружений: %1$d</string>
+    <string name="discovery_secondary_info">%1$s (Сигнал: %2$d)</string>
+    <string name="discovery_secondary_info_no_name">Уровень сигнала: %1$d</string>
+    <string name="discovery_secondary_infoNoName">Уровень сигнала: %1$d</string>
+    <string name="dialog_add_id_title">Добавить ID устройства</string>
+    <string name="app_description_main">Защитник вашей приватности — обнаруживает скрытые шпионские устройства через Bluetooth</string>
+    <string name="title_method">Метод обнаружения</string>
+    <string name="description_detection_method">Сопоставляет ID производителей Bluetooth и имена устройств со списком известных шпионских брендов.</string>
+    <string name="pref_language_title">Язык</string>
+    <string name="pref_language_summary">Выбрать язык приложения</string>
+    <string name="notification_title_devices_detected">Рядом обнаружены шпионские устройства</string>
+
+    <string-array name="pref_language_entries">
+        <item>Системный по умолчанию</item>
+        <item>Deutsch (Deutschland)</item>
+        <item>Deutsch (Schweiz)</item>
+        <item>Русский</item>
+        <item>עברית</item>
+    </string-array>
+
+    <string-array name="pref_language_values">
+        <item></item>
+        <item>de</item>
+        <item>de-CH</item>
+        <item>ru</item>
+        <item>iw</item>
+    </string-array>
+    <string name="notification_channel_alerts_name">Оповещения</string>
+    <string name="notification_channel_alerts_description">Оповещения об обнаружении устройств</string>
+    <string name="notification_channel_scanner_name">Сканер</string>
+    <string name="notification_channel_scanner_description">Статус фонового сканирования</string>
+    <string name="notification_detected_title">@string/notification_title_devices_detected</string>
+    <string name="notification_detected_text">%1$s рядом (Сигнал: %2$d)</string>
+    <string name="notification_expanded_text">Устройство: %1$s\nПроизводитель: %4$s\nСигнал: %2$d</string>
+    <string name="notification_unknown_device">Неизвестное устройство</string>
+    <string name="notification_service_title">Идет поиск…</string>
+    <string name="notification_service_text">Нажмите, чтобы открыть</string>
+    <string name="action_stop">Стоп</string>
+    <string name="alert_battery_optimization_title">Фоновая оптимизация</string>
+    <string name="alert_battery_optimization_message">Для надежной работы сканера в фоне, пожалуйста, отключите оптимизацию батареи для этого приложения.</string>
+    <string name="button_action_disable_restrictions">Отключить ограничения</string>
+    <string name="battery_optimization_title">Фоновая оптимизация</string>
+    <string name="action_disable_restrictions">Открыть настройки</string>
+    <string name="detection_reason_name_contains">Имя устройства содержит \"%1$s\"</string>
+    <string name="detection_reason_company_id_match">%1$s (ID: %2$s)</string>
+    <string name="label_company_unknown">Неизвестно (%1$s)</string>
+    <string name="label_unknown_device">Неизвестно</string>
+    <string name="clipboard_copied">Скопировано в буфер обмена!</string>
+    <string name="error_log_copied">Лог ошибок скопирован!</string>
+    <string name="clipboard_label_log_line">SpyDetectorLogLine</string>
+    <string name="toast_bluetooth_required">Пожалуйста, включите Bluetooth для сканирования.</string>
+    <string name="toast_bluetooth_not_supported">Ваше устройство не поддерживает Bluetooth — приложение не будет работать.</string>
+    <string name="action_restart_app">Перезапустить</string>
+    <string name="action_copy_log">Копировать лог</string>
+    <string name="error_details_label">Подробнее</string>
+    <string name="dialog_permissions_title">Нужны разрешения</string>
+    <string name="dialog_permissions_message">Чтобы находить устройства рядом, приложению нужен доступ к Bluetooth и геолокации. Нажмите \'Открыть настройки\' и разрешите оба пункта.</string>
+    <string name="dialog_action_open_settings">Открыть настройки</string>
+    <string name="dialog_action_cancel">Не сейчас</string>
+    <string name="dialog_clear_log_title">Очистить историю?</string>
+    <string name="dialog_clear_log_message">Это удалит все записи об обнаружениях. Это действие нельзя отменить.</string>
+    <string name="dialog_action_clear_confirm">Да, очистить</string>
+    <string name="toast_log_cleared">Готово! История очищена.</string>
+    <string name="chooser_export_log">Поделиться историей обнаружений</string>
+    <string name="toast_export_error">Не удалось экспортировать лог. Попробуйте еще раз.</string>
+    <string name="toast_scanning_in_background">Сканирование продолжается в фоновом режиме.</string>
+    <string name="label_id_prefix">Идентификатор: %1$s</string>
+    <string name="label_hex_prefix">Технические детали: %1$s</string>
+    <string name="label_type_prefix">Тип устройства: %1$s</string>
+    <string name="label_potential_prefix">Известен как: %1$s</string>
+    <string name="action_theme">Тема</string>
+    <string name="theme_system">Системная</string>
+    <string name="theme_light">Светлая</string>
+    <string name="theme_dark">Темная</string>
+    <string name="error_occurred_title">Ой, что-то пошло не так</string>
+    <string name="error_occurred_description">В приложении произошла неожиданная ошибка. Ваша история в сохранности. Нажмите \'Перезапустить\'.</string>
+    <string name="title_github">Исходный код</string>
+    <string name="summary_github">Посмотреть исходный код на GitHub</string>
+    <string name="reset_success">База данных сброшена</string>
+    <string name="error_unknown">Неизвестная ошибка</string>
+    <string name="type_apple">Apple</string>
+    <string name="type_samsung">Samsung</string>
+    <string name="type_tile">Tile</string>
+    <string name="type_other">Другое</string>
+    <string name="error_file_io">Ошибка ввода-вывода файла</string>
+    <string name="detection_reason_signature_match">Обнаружена известная сигнатура шпионского устройства</string>
+    <string name="label_rssi_unit">Сигнал: %1$d</string>
+    <string name="label_maker_prefix">Производитель: %1$s</string>
+    <string name="not_available">Н/Д</string>
+    <string name="device_list_format">(%1$s)</string>
+    <string name="dialog_edit_tracker_title">Редактировать трекер</string>
+    <string name="confirm_delete_tracker">Вы уверены, что хотите удалить этот трекер?</string>
+    <string name="delete_success">Трекер удален</string>
+    <string name="update_success">Трекер обновлен</string>
+    <string name="company_unknown_plain">Неизвестный производитель</string>
+    <string name="default_discovered_name">Новый обнаруженный трекер</string>
+    <string name="clipboard_label_log">clipboardLabelLog</string>
+
+    <string name="hint_manufacturer_id">ID производителя (Hex, например 0x004C)</string>
+    <string name="hint_manufacturer_name">Название производителя (например, Apple, Inc.)</string>
+    <string name="hint_brand_name">Бренд/Общее название (например, AirTag)</string>
+    <string name="hint_compatible_devices">Совместимые устройства (через запятую)</string>
+    <string name="label_tracker_type">Тип трекера</string>
+    <string name="discovery_secondary_info_v2">ID: %1$s | Сигнал: %2$d</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_title">Добро пожаловать в NoTrace</string>
+    <string name="onboarding_description">Ваш помощник по обеспечению приватности для поиска скрытых шпионских устройств и трекеров поблизости. Оставайтесь в безопасности.</string>
+    <string name="onboarding_warning_title">Важное предупреждение о безопасности</string>
+    <string name="onboarding_warning_text">Это приложение является инструментом обнаружения и может иногда показывать ложные срабатывания (например, VR-гарнитуры или некоторые смарт-устройства). Используя это приложение, вы соглашаетесь использовать информацию ответственно и НЕ преследовать и не нападать на кого-либо на основании результатов обнаружения.</string>
+    <string name="onboarding_agreement_checkbox">Я согласен использовать это приложение ответственно и не буду использовать его во вред другим.</string>
+    <string name="onboarding_button_accept">Начать</string>
+
+    <!-- Privacy Policy & Licenses -->
+    <string name="title_privacy">Политика конфиденциальности</string>
+    <string name="summary_privacy">Как мы обрабатываем ваши данные</string>
+    <string name="title_licenses">Лицензии открытого ПО</string>
+    <string name="summary_licenses">Библиотеки, используемые в NoTrace</string>
+</resources>

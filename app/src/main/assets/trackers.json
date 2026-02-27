@@ -1,0 +1,352 @@
+[
+  {
+    "id": 1,
+    "hex": "0x004C",
+    "sig_name": "Apple, Inc.",
+    "common_name": "Apple",
+    "devices": ["AirTag", "Find My accessories"],
+    "name_keywords": ["AirTag", "Find My"],
+    "verified": true
+  },
+  {
+    "id": 2,
+    "hex": "0x0075",
+    "sig_name": "Samsung Electronics Co. Ltd.",
+    "common_name": "Samsung",
+    "devices": ["Galaxy SmartTag", "SmartTag2", "SmartTag+"],
+    "name_keywords": ["SmartTag"],
+    "verified": true
+  },
+  {
+    "id": 3,
+    "hex": "0x00E0",
+    "sig_name": "Google",
+    "common_name": "Google",
+    "devices": ["Find Hub network trackers", "Nest devices"],
+    "name_keywords": ["Nest", "Find My Hub"],
+    "verified": true
+  },
+  {
+    "id": 4,
+    "hex": "0x027D",
+    "sig_name": "HUAWEI Technologies Co., Ltd.",
+    "common_name": "Huawei",
+    "devices": ["Huawei Tag"],
+    "name_keywords": ["Huawei Tag"],
+    "verified": true
+  },
+  {
+    "id": 5,
+    "hex": "0x01DA",
+    "sig_name": "Logitech International SA",
+    "common_name": "Logitech",
+    "devices": ["Logitech BLE devices"],
+    "verified": true
+  },
+  {
+    "id": 6,
+    "hex": "0x0008",
+    "sig_name": "Motorola",
+    "common_name": "Motorola",
+    "devices": ["Moto Tag (older platform)"],
+    "verified": true
+  },
+  {
+    "id": 7,
+    "hex": "0x038F",
+    "sig_name": "Xiaomi Inc.",
+    "common_name": "Xiaomi",
+    "devices": ["Xiaomi Smart Tag", "Mi Tracker", "Find My Device tags"],
+    "verified": true
+  },
+  {
+    "id": 8,
+    "hex": "0x0171",
+    "sig_name": "Amazon Fulfillment Service",
+    "common_name": "Amazon",
+    "devices": ["Amazon Sidewalk-enabled trackers", "Echo accessories"],
+    "name_keywords": ["Sidewalk", "Echo"],
+    "verified": true
+  },
+  {
+    "id": 9,
+    "hex": "0x01AB",
+    "sig_name": "Facebook, Inc.",
+    "common_name": "Meta",
+    "devices": ["Meta Stories", "Ray-Ban Stories"],
+    "name_keywords": ["rayban", "ray-ban", "ray ban"],
+    "verified": true
+  },
+  {
+    "id": 10,
+    "hex": "0x058E",
+    "sig_name": "Meta Platforms Technologies, LLC",
+    "common_name": "Meta",
+    "devices": ["Ray-Ban Meta", "Meta Quest"],
+    "verified": true
+  },
+  {
+    "id": 11,
+    "hex": "0x0D53",
+    "sig_name": "EssilorLuxottica Group",
+    "common_name": "EssilorLuxottica (Ray-Ban)",
+    "devices": ["Ray-Ban Branded BLE"],
+    "verified": true
+  },
+  {
+    "id": 12,
+    "hex": "0x03C2",
+    "sig_name": "Snap Inc.",
+    "common_name": "Snapchat / Snap",
+    "devices": ["Spectacles"],
+    "verified": true
+  },
+  {
+    "id": 13,
+    "hex": "0x0100",
+    "sig_name": "TomTom International BV",
+    "common_name": "TomTom",
+    "devices": ["TomTom GPS Trackers", "TomTom Bandit"],
+    "verified": true
+  },
+  {
+    "id": 14,
+    "hex": "0x00F9",
+    "sig_name": "StickNFind",
+    "common_name": "StickNFind",
+    "devices": [
+      "StickNFind BLE sticker tracker (one of first BLE item trackers, 2013)"
+    ],
+    "verified": true
+  },
+  {
+    "id": 15,
+    "hex": "0x015D",
+    "sig_name": "Estimote, Inc.",
+    "common_name": "Estimote",
+    "devices": ["Estimote Location Beacon", "Estimote Asset Tracker"],
+    "verified": true
+  },
+  {
+    "id": 16,
+    "hex": "0x01FD",
+    "sig_name": "Kontakt Micro-Location Sp. z o.o.",
+    "common_name": "Kontakt.io",
+    "devices": ["Kontakt.io Asset Tag", "BLE Beacon"],
+    "verified": true
+  },
+  {
+    "id": 17,
+    "hex": "0x01CB",
+    "sig_name": "Fetch My Pet",
+    "common_name": "Fetch My Pet",
+    "devices": ["Pet BLE Tracker"],
+    "verified": true
+  },
+  {
+    "id": 18,
+    "hex": "0x01FE",
+    "sig_name": "Radio Systems Corporation",
+    "common_name": "PetSafe / Radio Systems",
+    "devices": ["PetSafe BLE Pet Tracker"],
+    "verified": true
+  },
+  {
+    "id": 19,
+    "hex": "0x03B5",
+    "sig_name": "petPOMM, Inc",
+    "common_name": "petPOMM",
+    "devices": ["petPOMM BLE Pet Tracker"],
+    "verified": true
+  },
+  {
+    "id": 20,
+    "hex": "0x036D",
+    "sig_name": "AirBolt Pty Ltd",
+    "common_name": "AirBolt",
+    "devices": ["AirBolt GPS Luggage Tracker"],
+    "verified": true
+  },
+  {
+    "id": 21,
+    "hex": "0x03A7",
+    "sig_name": "AeroScout",
+    "common_name": "AeroScout",
+    "devices": ["AeroScout T2 Wi-Fi/BLE Asset Tag", "AeroScout T5 Tag"],
+    "verified": true
+  },
+  {
+    "id": 22,
+    "hex": "0x02DE",
+    "sig_name": "Samsung SDS Co., Ltd.",
+    "common_name": "Samsung SDS",
+    "devices": ["Enterprise BLE Asset Tracker"],
+    "verified": true
+  },
+  {
+    "id": 23,
+    "hex": "0x008C",
+    "sig_name": "Gimbal Inc.",
+    "common_name": "Gimbal",
+    "devices": ["Gimbal BLE Beacon", "Proximity Tracker"],
+    "verified": true
+  },
+  {
+    "id": 24,
+    "hex": "0x01B5",
+    "sig_name": "Nest Labs Inc.",
+    "common_name": "Nest Labs (Google)",
+    "devices": ["Nest BLE devices"],
+    "verified": true
+  },
+  {
+    "id": 25,
+    "hex": "0x022F",
+    "sig_name": "Huami (Shanghai) Culture Communication CO., LTD",
+    "common_name": "Huami / Amazfit",
+    "devices": ["Amazfit BLE Band / Watch"],
+    "verified": true
+  },
+  {
+    "id": 26,
+    "hex": "0x0157",
+    "sig_name": "Anhui Huami Information Technology Co., Ltd.",
+    "common_name": "Huami (Xiaomi partner brand)",
+    "devices": ["Xiaomi Mi Band", "Amazfit"],
+    "verified": true
+  },
+  {
+    "id": 27,
+    "hex": "0x018E",
+    "sig_name": "Fitbit, Inc.",
+    "common_name": "Fitbit (Google)",
+    "devices": ["Fitbit Charge", "Fitbit Sense", "Fitbit trackers"],
+    "verified": true
+  },
+  {
+    "id": 28,
+    "hex": "0x0087",
+    "sig_name": "Garmin International, Inc.",
+    "common_name": "Garmin",
+    "devices": ["Garmin inReach", "Garmin Fenix GPS", "Garmin Dog Tracker"],
+    "verified": true
+  },
+  {
+    "id": 29,
+    "hex": "0x012D",
+    "sig_name": "Sony Corporation",
+    "common_name": "Sony",
+    "devices": ["Sony Smarttag (SmartBand)", "Sony BLE devices"],
+    "name_keywords": ["Smarttag", "SmartBand"],
+    "verified": true
+  },
+  {
+    "id": 30,
+    "hex": "0x022B",
+    "sig_name": "Tesla Motors",
+    "common_name": "Tesla",
+    "devices": ["Tesla BLE key / Phone key"],
+    "verified": true
+  },
+  {
+    "id": 31,
+    "hex": "0x02C5",
+    "sig_name": "Lenovo (Singapore) Pte Ltd.",
+    "common_name": "Lenovo",
+    "devices": ["Lenovo Go Tracker"],
+    "verified": true
+  },
+  {
+    "id": 32,
+    "hex": "0x00C4",
+    "sig_name": "LG Electronics",
+    "common_name": "LG",
+    "devices": ["LG BLE devices"],
+    "verified": true
+  },
+  {
+    "id": 33,
+    "hex": "0x02A6",
+    "sig_name": "Robert Bosch GmbH",
+    "common_name": "Bosch",
+    "devices": ["Bosch SmartphoneHub", "PowerTube BLE"],
+    "verified": true
+  },
+  {
+    "id": 34,
+    "hex": "0x01F3",
+    "sig_name": "The University of Tokyo",
+    "common_name": "Univ. Tokyo",
+    "devices": ["Research BLE devices"],
+    "verified": true
+  },
+  {
+    "id": 35,
+    "hex": "0x03FD",
+    "sig_name": "Trimble Navigation Ltd.",
+    "common_name": "Trimble",
+    "devices": ["Trimble BLE Asset Tracker", "GPS Survey devices"],
+    "verified": true
+  },
+  {
+    "id": 36,
+    "hex": "0x0059",
+    "sig_name": "Nordic Semiconductor ASA",
+    "common_name": "Nordic Semiconductor",
+    "devices": ["nRF52 / nRF53 SoC \u2014 used in trackers"],
+    "verified": true
+  },
+  {
+    "id": 37,
+    "hex": "0x0211",
+    "sig_name": "Telink Semiconductor",
+    "common_name": "Telink",
+    "devices": ["BLE SoC used in low-cost tracker tags"],
+    "verified": true
+  },
+  {
+    "id": 38,
+    "hex": "0x02E5",
+    "sig_name": "Espressif Incorporated",
+    "common_name": "Espressif",
+    "devices": ["ESP32 BLE trackers"],
+    "verified": true
+  },
+  {
+    "id": 39,
+    "hex": "0x0030",
+    "sig_name": "ST Microelectronics",
+    "common_name": "STMicro",
+    "devices": ["STM32WB BLE trackers"],
+    "verified": true
+  },
+  {
+    "id": 40,
+    "hex": "0x00CD",
+    "sig_name": "Microchip Technology Inc.",
+    "common_name": "Microchip",
+    "devices": ["BLE SoC trackers"],
+    "verified": true
+  },
+  {
+    "id": 47,
+    "brand": "Tile",
+    "common_name": "Tile",
+    "devices": ["Tile Mate", "Tile Pro", "Tile Slim", "Tile Sticker"],
+    "verified": true
+  },
+  {
+    "id": 48,
+    "brand": "Chipolo",
+    "common_name": "Chipolo",
+    "devices": ["Chipolo ONE", "Chipolo CARD", "Chipolo POP"],
+    "verified": true
+  },
+  {
+    "id": 49,
+    "brand": "Pebblebee",
+    "common_name": "Pebblebee",
+    "devices": ["Pebblebee Clip", "Pebblebee Card", "Pebblebee Tag"],
+    "verified": true
+  }
+]

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ════════════════════════════════════════════════════════════════
+         M3 Dark Theme – Premium "Cyberpunk" Mockup
+         ════════════════════════════════════════════════════════════════ -->
+
+    <!-- Primary: Neon Cyan/Blue -->
+    <color name="md_theme_dark_primary">#00E5FF</color>
+    <color name="md_theme_dark_onPrimary">#00363D</color>
+    <color name="md_theme_dark_primaryContainer">#004F58</color>
+    <color name="md_theme_dark_onPrimaryContainer">#99F5FF</color>
+
+    <!-- Secondary: Deep Blue -->
+    <color name="md_theme_dark_secondary">#80D8FF</color>
+    <color name="md_theme_dark_onSecondary">#00344D</color>
+    <color name="md_theme_dark_secondaryContainer">#004B6F</color>
+    <color name="md_theme_dark_onSecondaryContainer">#B3E5FC</color>
+
+    <!-- Tertiary: Bright Blue/Cyan -->
+    <color name="md_theme_dark_tertiary">#00B0FF</color>
+    <color name="md_theme_dark_onTertiary">#00334E</color>
+    <color name="md_theme_dark_tertiaryContainer">#004766</color>
+    <color name="md_theme_dark_onTertiaryContainer">#B3E5FC</color>
+
+    <!-- Error -->
+    <color name="md_theme_dark_error">#FFB4AB</color>
+    <color name="md_theme_dark_onError">#690005</color>
+    <color name="md_theme_dark_errorContainer">#93000A</color>
+    <color name="md_theme_dark_onErrorContainer">#FFDAD6</color>
+
+    <!-- Background / Surface: Deep OLED Black / Dark Blue-Grey -->
+    <color name="md_theme_dark_background">#0B0F19</color>
+    <color name="md_theme_dark_onBackground">#E2E2E9</color>
+    <color name="md_theme_dark_surface">#0B0F19</color>
+    <color name="md_theme_dark_onSurface">#E2E2E9</color>
+    
+    <color name="md_theme_dark_surfaceVariant">#44474E</color>
+    <color name="md_theme_dark_onSurfaceVariant">#C4C6D0</color>
+    
+    <!-- Elevated surfaces (cards, bottom sheets) -->
+    <color name="md_theme_dark_surfaceContainerLowest">#090C14</color>
+    <color name="md_theme_dark_surfaceContainerLow">#111623</color>
+    <color name="md_theme_dark_surfaceContainer">#161C2C</color>
+    <color name="md_theme_dark_surfaceContainerHigh">#1E2538</color>
+    <color name="md_theme_dark_surfaceContainerHighest">#262E45</color>
+
+    <!-- Outline -->
+    <color name="md_theme_dark_outline">#8E9099</color>
+    <color name="md_theme_dark_outlineVariant">#44474E</color>
+
+    <!-- Inverse -->
+    <color name="md_theme_dark_inverseSurface">#E2E2E9</color>
+    <color name="md_theme_dark_inverseOnSurface">#2E3036</color>
+    <color name="md_theme_dark_inversePrimary">#006874</color>
+
+    <!-- Scrim -->
+    <color name="md_theme_dark_scrim">#000000</color>
+</resources>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    
+    <PreferenceCategory 
+        android:title="@string/title_category_scanning_settings"
+        app:iconSpaceReserved="true">
+        
+        <SwitchPreferenceCompat 
+            android:defaultValue="true" 
+            android:key="foreground_service" 
+            android:summary="@string/summary_foreground" 
+            android:title="@string/title_foreground"
+            android:icon="@drawable/ic_bluetooth_searching" />
+            
+        <SeekBarPreference 
+            android:defaultValue="5" 
+            android:key="sensitivity_level" 
+            android:title="@string/title_threshold" 
+            app:min="1"
+            android:max="10"
+            app:seekBarIncrement="1"
+            app:useSimpleSummaryProvider="false"
+            android:icon="@drawable/ic_tune_24" />
+
+
+            
+        <SeekBarPreference 
+            android:defaultValue="60" 
+            android:key="cooldown_sec" 
+            android:title="@string/title_cooldown" 
+            app:min="0"
+            android:max="300"
+            app:seekBarIncrement="1"
+            app:showSeekBarValue="true"
+            app:useSimpleSummaryProvider="false"
+            android:icon="@drawable/ic_timer_24" />
+
+    </PreferenceCategory>
+    
+    <PreferenceCategory 
+        android:title="@string/title_category_notifications"
+        app:iconSpaceReserved="true">
+        
+        <SwitchPreferenceCompat 
+            android:defaultValue="true" 
+            android:key="enable_notifications" 
+            android:summary="@string/summary_notifications" 
+            android:title="@string/title_notifications"
+            android:icon="@drawable/ic_notifications_24" />
+
+            
+        <Preference 
+            android:key="app_language" 
+            android:title="@string/pref_language_title" 
+            android:summary="@string/pref_language_summary" 
+            android:icon="@drawable/ic_language_24" />
+
+    </PreferenceCategory>
+    
+    <PreferenceCategory 
+        android:title="@string/label_recent_detections"
+        app:iconSpaceReserved="true">
+        
+        <SwitchPreferenceCompat 
+            android:defaultValue="true" 
+            android:key="logging_enabled" 
+            android:summary="@string/summary_logging" 
+            android:title="@string/title_logging"
+            android:icon="@drawable/ic_settings" />
+            
+        <Preference 
+            android:key="share_history" 
+            android:title="@string/menu_action_export_history" 
+            android:summary="@string/summary_share_history"
+            android:icon="@drawable/ic_export" />
+
+        <Preference 
+            android:key="clear_history" 
+            android:title="@string/menu_action_clear_history" 
+            android:summary="@string/summary_clear_history"
+            android:icon="@drawable/ic_delete" />
+
+    </PreferenceCategory>
+</PreferenceScreen>

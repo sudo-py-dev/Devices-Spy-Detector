@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NoTrace</string>
+    <string name="settings">Einstellungen</string>
+    <string name="action_about">Über</string>
+    <string name="button_start_scanning">Scan starten</string>
+    <string name="button_stop_scanning">Scan stoppen</string>
+    <string name="description_empty_state">Der aktive Scan hilft Ihnen, versteckte Spionagegeräte oder VR-Headsets in der Nähe zu finden.</string>
+    <string name="description_value_add_text">Aktivieren Sie das Scannen für Echtzeitwarnungen.</string>
+    <string name="button_start_scanning_fab">Scan starten</string>
+    <string name="button_move_to_background">In den Hintergrund</string>
+    <string name="status_scanning_active">Suche nach Spionagegeräten in der Nähe…</string>
+    <string name="title_category_about">Über</string>
+    <string name="scanning">Suche nach Spionagegeräten in der Nähe…</string>
+    <string name="not_scanning">Scan noch nicht gestartet</string>
+    <string name="clear">Löschen</string>
+    <string name="export">Exportieren</string>
+    <string name="menu_action_clear_history">Verlauf löschen</string>
+    <string name="menu_action_export_history">Verlauf exportieren</string>
+    <string name="alert_devices_detected">Spionagegeräte könnten in der Nähe sein!</string>
+    <string name="description_main_info">Warnt vor potenziellen Spionagegeräten. Hinweis: VR-Headsets können ebenfalls Warnungen auslösen.</string>
+    <string name="alert_warning_title">Bitte lesen</string>
+    <string name="alert_warning_message">Ergebnisse dienen nur als Richtwert. Überprüfen Sie Ergebnisse stets manuell und beachten Sie lokale Gesetze.</string>
+    <string name="title_category_scanning_settings">Scan-Einstellungen</string>
+    <string name="title_foreground">Hintergrund-Scan</string>
+    <string name="description_background_scanning">Sucht auch nach Spionagegeräten, wenn die App geschlossen ist.</string>
+    <string name="summary_foreground">Sucht nach Geräten, während Sie andere Apps nutzen.</string>
+    <string name="title_cooldown">Benachrichtigungsintervall</string>
+    <string name="description_alert_cooldown">Warten Sie mindestens %1$d Sekunden zwischen Benachrichtigungen.</string>
+    <string name="title_threshold">Scan-Empfindlichkeit</string>
+    <string name="description_detection_range">Stellen Sie ein, wie nah ein Gerät sein muss, um einen Alarm auszulösen.</string>
+    <string name="sensitivity_low">Niedrige Empfindlichkeit: Erkennt nur sehr nahe Geräte.</string>
+    <string name="sensitivity_medium">Mittlere Empfindlichkeit: Standard-Erkennungsreichweite.</string>
+    <string name="sensitivity_high">Hohe Empfindlichkeit: Erkennt weit entfernte Geräte (mehr Fehlalarme).</string>
+    <string name="title_category_notifications">Benachrichtigungen</string>
+    <string name="title_notifications">Warnungen</string>
+    <string name="description_notifications">Erhalten Sie eine Benachrichtigung, wenn Spionagegeräte erkannt werden.</string>
+    <string name="summary_notifications">Vibrieren und Benachrichtigung bei Warnungen anzeigen.</string>
+    <string name="label_recent_detections">Erkennungsverlauf</string>
+    <string name="title_logging">Erkennungsverlauf anzeigen</string>
+    <string name="description_detection_history">Liste aller Erkennungen auf dem Startbildschirm anzeigen.</string>
+    <string name="summary_logging">Verlaufstracking für erkannte Geräte aktivieren.</string>
+    <string name="summary_cooldown">Höchstens alle %1$d Sekunden warnen.</string>
+    <string name="summary_share_history">Erkennungsverlauf als TXT-Datei teilen</string>
+    <string name="summary_clear_history">Alle gespeicherten Erkennungen dauerhaft löschen</string>
+    <string name="nothing_to_export">Noch nichts zum Exportieren – starten Sie einen Scan, um Ergebnisse zu sehen.</string>
+    <string name="nothing_to_clear">Nichts zum Löschen – der Verlauf ist bereits leer.</string>
+    <string name="label_detection_history">Aktivitätsprotokoll</string>
+    <string name="text_empty_history">Noch keine Erkennungen verzeichnet.</string>
+    <string name="title_device_id_manager">Geräte-ID Manager</string>
+    <string name="label_saved_ids">Gespeicherte IDs</string>
+    <string name="label_nearby_ids">In der Nähe entdeckt</string>
+    <string name="label_add_manual">Manuell hinzufügen</string>
+    <string name="hint_add_id_manual">0x01AB</string>
+    <string name="btn_add">Hinzufügen</string>
+    <string name="no_saved_ids">Noch keine IDs gespeichert</string>
+    <string name="no_nearby_ids">Noch keine neuen IDs entdeckt</string>
+    <string name="action_clear_all">Alle löschen</string>
+    <string name="confirm_clear_all">Alle gespeicherten Geräte-IDs entfernen?</string>
+    <string name="error_invalid_id">Geben Sie eine gültige ID ein (z.B. 0x01AB)</string>
+    <string name="error_id_already_exists">Diese ID ist bereits gespeichert</string>
+    <string name="id_added">%1$s hinzugefügt</string>
+    <string name="hit_count">%1$d Erkennungen</string>
+    <string name="discovery_secondary_info">%1$s (Signal: %2$d)</string>
+    <string name="discovery_secondary_info_no_name">Signalstärke: %1$d</string>
+    <string name="discovery_secondary_infoNoName">Signalstärke: %1$d</string>
+    <string name="dialog_add_id_title">Geräte-ID hinzufügen</string>
+    <string name="app_description_main">Ihr Privatsphäre-Schutz – Erkennt versteckte Spionagegeräte via Bluetooth-Scan</string>
+    <string name="title_method">Erkennungsmethode</string>
+    <string name="description_detection_method">Gleicht Bluetooth-Hersteller-IDs und Gerätenamen mit einer Liste bekannter Spionage-Marken ab.</string>
+    <string name="pref_language_title">Sprache</string>
+    <string name="pref_language_summary">App-Sprache wählen</string>
+    <string name="notification_title_devices_detected">Spionagegeräte in der Nähe erkannt</string>
+
+    <string-array name="pref_language_entries">
+        <item>Systemstandard</item>
+        <item>Deutsch (Deutschland)</item>
+        <item>Deutsch (Schweiz)</item>
+        <item>Русский</item>
+        <item>עברית</item>
+    </string-array>
+
+    <string-array name="pref_language_values">
+        <item></item>
+        <item>de</item>
+        <item>de-CH</item>
+        <item>ru</item>
+        <item>iw</item>
+    </string-array>
+    <string name="notification_channel_alerts_name">Warnungen</string>
+    <string name="notification_channel_alerts_description">Warnungen zur Geräteerkennung</string>
+    <string name="notification_channel_scanner_name">Scanner</string>
+    <string name="notification_channel_scanner_description">Status des Hintergrund-Scans</string>
+    <string name="notification_detected_title">@string/notification_title_devices_detected</string>
+    <string name="notification_detected_text">%1$s in der Nähe (Signal: %2$d)</string>
+    <string name="notification_expanded_text">Gerät: %1$s\nHersteller: %4$s\nSignal: %2$d</string>
+    <string name="notification_unknown_device">Unbekanntes Gerät</string>
+    <string name="notification_service_title">Scan läuft…</string>
+    <string name="notification_service_text">Zum Öffnen tippen</string>
+    <string name="action_stop">Stopp</string>
+    <string name="alert_battery_optimization_title">Hintergrund-Optimierung</string>
+    <string name="alert_battery_optimization_message">Für zuverlässiges Scannen im Hintergrund deaktivieren Sie bitte die Akku-Optimierung für diese App.</string>
+    <string name="button_action_disable_restrictions">Einschränkungen deaktivieren</string>
+    <string name="battery_optimization_title">Hintergrund-Optimierung</string>
+    <string name="action_disable_restrictions">Einstellungen öffnen</string>
+    <string name="detection_reason_name_contains">Gerätename enthält \"%1$s\"</string>
+    <string name="detection_reason_company_id_match">%1$s (ID: %2$s)</string>
+    <string name="label_company_unknown">Unbekannt (%1$s)</string>
+    <string name="label_unknown_device">Unbekannt</string>
+    <string name="clipboard_copied">In die Zwischenablage kopiert!</string>
+    <string name="error_log_copied">Fehlerprotokoll kopiert!</string>
+    <string name="clipboard_label_log_line">SpyDetectorProtokollZeile</string>
+    <string name="toast_bluetooth_required">Bitte aktivieren Sie Bluetooth, um den Scan zu starten.</string>
+    <string name="toast_bluetooth_not_supported">Ihr Gerät unterstützt kein Bluetooth – diese App wird nicht funktionieren.</string>
+    <string name="action_restart_app">App neu starten</string>
+    <string name="action_copy_log">Protokoll kopieren</string>
+    <string name="error_details_label">Details anzeigen</string>
+    <string name="dialog_permissions_title">Berechtigungen erforderlich</string>
+    <string name="dialog_permissions_message">Um Geräte in der Nähe zu finden, benötigt diese App Zugriff auf Bluetooth und Ihren Standort. Tippen Sie auf \'Einstellungen öffnen\' und erlauben Sie beides.</string>
+    <string name="dialog_action_open_settings">Einstellungen öffnen</string>
+    <string name="dialog_action_cancel">Nicht jetzt</string>
+    <string name="dialog_clear_log_title">Verlauf löschen?</string>
+    <string name="dialog_clear_log_message">Dies löscht alle gespeicherten Erkennungen unwiderruflich.</string>
+    <string name="dialog_action_clear_confirm">Ja, löschen</string>
+    <string name="toast_log_cleared">Erledigt! Ihr Verlauf wurde geleert.</string>
+    <string name="chooser_export_log">Erkennungsverlauf teilen</string>
+    <string name="toast_export_error">Teilen fehlgeschlagen. Bitte erneut versuchen.</string>
+    <string name="toast_scanning_in_background">Der Scan läuft im Hintergrund weiter.</string>
+    <string name="label_id_prefix">Kennung: %1$s</string>
+    <string name="label_hex_prefix">Technische Details: %1$s</string>
+    <string name="label_type_prefix">Gerätetyp: %1$s</string>
+    <string name="label_potential_prefix">Bekannt als: %1$s</string>
+    <string name="action_theme">Design</string>
+    <string name="theme_system">Systemstandard</string>
+    <string name="theme_light">Hell</string>
+    <string name="theme_dark">Dunkel</string>
+    <string name="error_occurred_title">Oops – Etwas ist schiefgelaufen</string>
+    <string name="error_occurred_description">Die App hatte ein unerwartetes Problem. Ihr Verlauf ist sicher. Tippen Sie auf \'Neu starten\'.</string>
+    <string name="title_github">Quellcode</string>
+    <string name="summary_github">Quellcode auf GitHub ansehen</string>
+    <string name="reset_success">Datenbank auf Standardwerte zurückgesetzt</string>
+    <string name="error_unknown">Unbekannter Fehler</string>
+    <string name="type_apple">Apple</string>
+    <string name="type_samsung">Samsung</string>
+    <string name="type_tile">Tile</string>
+    <string name="type_other">Andere</string>
+    <string name="error_file_io">Datei-Fehler (E/A)</string>
+    <string name="detection_reason_signature_match">Bekannte Spionage-Signatur erkannt</string>
+    <string name="label_rssi_unit">Signal: %1$d</string>
+    <string name="label_maker_prefix">Hersteller: %1$s</string>
+    <string name="not_available">N.A.</string>
+    <string name="device_list_format">(%1$s)</string>
+    <string name="dialog_edit_tracker_title">Tracker bearbeiten</string>
+    <string name="confirm_delete_tracker">Sind Sie sicher, dass Sie diese Tracker-Definition löschen möchten?</string>
+    <string name="delete_success">Tracker gelöscht</string>
+    <string name="update_success">Tracker aktualisiert</string>
+    <string name="company_unknown_plain">Unbekannter Hersteller</string>
+    <string name="default_discovered_name">Neu entdeckter Tracker</string>
+    <string name="clipboard_label_log">ZwischenablageProtokoll</string>
+
+    <string name="hint_manufacturer_id">Hersteller-ID (Hex, z.B. 0x004C)</string>
+    <string name="hint_manufacturer_name">Herstellername (z.B. Apple, Inc.)</string>
+    <string name="hint_brand_name">Marke/Allgemeiner Name (z.B. AirTag)</string>
+    <string name="hint_compatible_devices">Kompatible Geräte (kommagetrennt)</string>
+    <string name="label_tracker_type">Tracker-Typ</string>
+    <string name="discovery_secondary_info_v2">ID: %1$s | Signal: %2$d</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_title">Willkommen bei NoTrace</string>
+    <string name="onboarding_description">Ihr Privatsphäre-Helfer zum Finden von versteckten Spionagegeräten und Trackern in der Nähe. Bleiben Sie sicher und informiert.</string>
+    <string name="onboarding_warning_title">Wichtiger Sicherheitshinweis</string>
+    <string name="onboarding_warning_text">Diese App ist ein Erkennungswerkzeug und kann gelegentlich Fehlalarme anzeigen (wie VR-Headsets oder einige Smart-Geräte). Durch die Nutzung dieser App erklären Sie sich damit einverstanden, die Informationen verantwortungsbewusst zu verwenden und NIEMANDEN auf der Grundlage von Erkennungsergebnissen zu belästigen oder anzugreifen.</string>
+    <string name="onboarding_agreement_checkbox">Ich erkläre mich damit einverstanden, diese App verantwortungsbewusst zu nutzen und sie nicht zu verwenden, um anderen zu schaden.</string>
+    <string name="onboarding_button_accept">Los geht\'s</string>
+
+    <!-- Privacy Policy & Licenses -->
+    <string name="title_privacy">Datenschutzerklärung</string>
+    <string name="summary_privacy">Wie wir mit Ihren Daten umgehen</string>
+    <string name="title_licenses">Open-Source-Lizenzen</string>
+    <string name="summary_licenses">In NoTrace verwendete Bibliotheken</string>
+</resources>

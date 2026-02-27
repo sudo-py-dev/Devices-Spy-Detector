@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Bluetooth permissions -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    
+    <!-- Android 12+ (API 31+) Bluetooth permissions -->
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN"
+        android:usesPermissionFlags="neverForLocation"
+        tools:targetApi="s" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    
+    <!-- Location permission required for BLE scanning on Android 10-11 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    
+    <!-- Foreground service permission (Android 9+) -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE"
+        tools:targetApi="35" /><!-- 34 is not sufficient for Play Store -->
+    
+    <!-- Post notifications permission (Android 13+) -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" />
+
+    <application
+        android:name=".SpyDetectorApp"
+        android:allowBackup="false"
+        android:fullBackupContent="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SpyDetector"
+        android:localeConfig="@xml/locales_config">
+        
+        <!-- Main Activity -->
+        <activity
+            android:name=".ui.main.MainActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <!-- Settings Activity -->
+        <activity
+            android:name=".ui.settings.SettingsActivity"
+            android:exported="false"
+            android:label="@string/settings"
+            android:parentActivityName=".ui.main.MainActivity" />
+
+        <!-- Device ID Manager Activity -->
+        <activity
+            android:name=".ui.deviceids.DeviceIdManagerActivity"
+            android:exported="false"
+            android:label="@string/title_device_id_manager"
+            android:parentActivityName=".ui.settings.SettingsActivity" />
+
+        <!-- About Activity -->
+        <activity
+            android:name=".ui.about.AboutActivity"
+            android:exported="false"
+            android:label="@string/action_about"
+            android:parentActivityName=".ui.main.MainActivity" />
+
+        <!-- Privacy Activity -->
+        <activity
+            android:name=".ui.about.PrivacyActivity"
+            android:exported="false"
+            android:label="@string/title_privacy"
+            android:parentActivityName=".ui.about.AboutActivity" />
+
+        <!-- Licenses Activity -->
+        <activity
+            android:name=".ui.about.LicensesActivity"
+            android:exported="false"
+            android:label="@string/title_licenses"
+            android:parentActivityName=".ui.about.AboutActivity" />
+
+        <!-- Crash Activity -->
+        <activity
+            android:name=".ui.error.CrashActivity"
+            android:exported="false"
+            android:process=":error_process"
+            android:theme="@style/Theme.SpyDetector" />
+        
+        <!-- Foreground Service -->
+        <service
+            android:name=".service.SpyScannerService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="connectedDevice" />
+        
+        <!-- FileProvider for exporting logs -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>

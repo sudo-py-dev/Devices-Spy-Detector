@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NoTrace</string>
+    <string name="settings">iistellige</string>
+    <string name="action_about">Über</string>
+    <string name="button_start_scanning">Scan starte</string>
+    <string name="button_stop_scanning">Scan stoppe</string>
+    <string name="description_empty_state">Dä aktiv Scan hilft der, verstekt Spionagegrät oder VR-Brille i de Nachberschaft z\'finde.</string>
+    <string name="description_value_add_text">Schalt de Scan ii für Warnige in Echtziit.</string>
+    <string name="button_start_scanning_fab">Scan starte</string>
+    <string name="button_move_to_background">In Hintergrund</string>
+    <string name="status_scanning_active">Sueche nach Spionagegrät ide Nöchi…</string>
+    <string name="title_category_about">Über</string>
+    <string name="scanning">Sueche nach Spionagegrät ide Nöchi…</string>
+    <string name="not_scanning">Scan nanig gstartet</string>
+    <string name="clear">Lösche</string>
+    <string name="export">Exportiere</string>
+    <string name="menu_action_clear_history">Verlauf lösche</string>
+    <string name="menu_action_export_history">Verlauf exportiere</string>
+    <string name="alert_devices_detected">Spionagegrät chönntet ide Nöchi sii!</string>
+    <string name="description_main_info">Warnt vor potenzielle Spionagegrät. Hiwiis: VR-Brille chönntet au Warnige uslöse.</string>
+    <string name="alert_warning_title">Bitte läse</string>
+    <string name="alert_warning_message">Ergebnis diened nur als Richtwert. Überprüf d\'Ergebnis immer vo Hand und beacht d\'Gsetz.</string>
+    <string name="title_category_scanning_settings">Scan-iistellige</string>
+    <string name="title_foreground">Hintergrund-Scan</string>
+    <string name="description_background_scanning">Suecht au nach Spionagegrät, wenn d\'App zue isch.</string>
+    <string name="summary_foreground">Suecht nach Grät, während du anderi Apps bruchsch.</string>
+    <string name="title_cooldown">Wie oft du gwarnet wirsch</string>
+    <string name="description_alert_cooldown">Warte bitte mindestens %1$d Sekunde zwüsche de Benachrichtigunge.</string>
+    <string name="title_threshold">Scan-Empfindlichkeit</string>
+    <string name="description_detection_range">Stell ii, wie noh es Grät muess sii, zum en Alarm uszlöse.</string>
+    <string name="sensitivity_low">Tüüfi Empfindlichkeit: Erkennt nur Grät i de direkte Nöchi.</string>
+    <string name="sensitivity_medium">Mittleri Empfindlichkeit: Standard-Erkennigsriichwiiti.</string>
+    <string name="sensitivity_high">Hochi Empfindlichkeit: Erkennt au Grät wo wiiter weg sind (meh Fehlalarm).</string>
+    <string name="title_category_notifications">Warnige</string>
+    <string name="title_notifications">Warnige</string>
+    <string name="description_notifications">Bechum e Benachrichtigung, wenn Spionagegrät ide Nöchi sind.</string>
+    <string name="summary_notifications">Vibriere und Benachrichtigung azeige bi Warnige.</string>
+    <string name="label_recent_detections">Verlauf</string>
+    <string name="title_logging">Erkennigsverlauf azeige</string>
+    <string name="description_detection_history">Lischt vo allne Erkennige ufem Startbildschirm azeige.</string>
+    <string name="summary_logging">Verlauf-Tracking für erkannti Grät iischalte.</string>
+    <string name="summary_cooldown">Höchstens alli %1$d Sekunde warne.</string>
+    <string name="nothing_to_export">Nanig zum Exportiere – start en Scan, zum Ergebnis z\'gseh.</string>
+    <string name="nothing_to_clear">Nüt zum Lösche – de Verlauf isch scho leer.</string>
+    <string name="label_detection_history">Protokoll</string>
+    <string name="text_empty_history">Kei Protokoll gfunde.</string>
+    <string name="title_device_id_manager">Gräte-ID Manager</string>
+    <string name="label_saved_ids">Gspeichereti IDs</string>
+    <string name="label_nearby_ids">Ide Nöchi entdeckt</string>
+    <string name="label_add_manual">Vo Hand dezuefüege</string>
+    <string name="hint_add_id_manual">0x01AB</string>
+    <string name="btn_add">Hizuefüege</string>
+    <string name="no_saved_ids">Nanig kei IDs gspeicheret</string>
+    <string name="no_nearby_ids">Nanig kei neui IDs entdeckt</string>
+    <string name="action_clear_all">Alli lösche</string>
+    <string name="confirm_clear_all">Alli gspeicherete Gräte-IDs lösche?</string>
+    <string name="error_invalid_id">Gib e gültigi ID ii (z.B. 0x01AB)</string>
+    <string name="error_id_already_exists">Die ID isch scho gspeicheret</string>
+    <string name="id_added">%1$s dezuefüegt</string>
+    <string name="hit_count">%1$d Erkennige</string>
+    <string name="discovery_secondary_info">%1$s (Signal: %2$d)</string>
+    <string name="discovery_secondary_info_no_name">Signalstärchi: %1$d</string>
+    <string name="discovery_secondary_infoNoName">Signalstärchi: %1$d</string>
+    <string name="dialog_add_id_title">Gräte-ID dezuefüege</string>
+    <string name="app_description_main">Din Privatsphäre-Schutz – Erkennt verstekti Spionagegrät via Bluetooth-Scan</string>
+    <string name="title_method">Erkennigsmethode</string>
+    <string name="description_detection_method">Gliicht Bluetooth-Hersteller-IDs und Grätenäme mit ere Lischt vo bekannte Spionagemarke ab.</string>
+    <string name="pref_language_title">Sproch</string>
+    <string name="pref_language_summary">Sproch vo de App wähle</string>
+    <string name="notification_title_devices_detected">Spionagegrät ide Nöchi entdeckt</string>
+
+    <string-array name="pref_language_entries">
+        <item>Systemstandard</item>
+        <item>Dütsch (Dütschland)</item>
+        <item>Dütsch (Schwiiz)</item>
+        <item>Russisch</item>
+        <item>Hebräisch</item>
+    </string-array>
+
+    <string-array name="pref_language_values">
+        <item></item>
+        <item>de</item>
+        <item>de-CH</item>
+        <item>ru</item>
+        <item>iw</item>
+    </string-array>
+    <string name="notification_channel_alerts_name">Warnige</string>
+    <string name="notification_channel_alerts_description">Warnige zur Gräte-Erkennig</string>
+    <string name="notification_channel_scanner_name">Scanner</string>
+    <string name="notification_channel_scanner_description">Status vom Hintergrund-Scan</string>
+    <string name="notification_detected_title">@string/notification_title_devices_detected</string>
+    <string name="notification_detected_text">%1$s ide Nächi (Signal: %2$d)</string>
+    <string name="notification_expanded_text">Grät: %1$s\nHersteller: %4$s\nSignal: %2$d</string>
+    <string name="notification_unknown_device">Unbekannts Grät</string>
+    <string name="notification_service_title">Scan läuft…</string>
+    <string name="notification_service_text">Drucke zum Öffne</string>
+    <string name="action_stop">Stopp</string>
+    <string name="alert_battery_optimization_title">Hintergrund-Optimierig</string>
+    <string name="alert_battery_optimization_message">Für e zuverlässige Scan im Hintergrund, nimm d\'Akku-Optimierig für die App use.</string>
+    <string name="button_action_disable_restrictions">Ischränkinge usschalte</string>
+    <string name="battery_optimization_title">Hintergrund-Optimierig</string>
+    <string name="action_disable_restrictions">Iistellige öffne</string>
+    <string name="detection_reason_name_contains">Grätename beinhaltet \"%1$s\"</string>
+    <string name="detection_reason_company_id_match">%1$s (ID: %2$s)</string>
+    <string name="label_company_unknown">Unbekannt (%1$s)</string>
+    <string name="label_unknown_device">Unbekannt</string>
+    <string name="clipboard_copied">Id Zwüscheablag kopiert!</string>
+    <string name="error_log_copied">Fehlerprotokoll kopiert!</string>
+    <string name="clipboard_label_log_line">SpyDetectorProtokollZile</string>
+    <string name="toast_bluetooth_required">Bitte aktivier Bluetooth zum de Scan starte.</string>
+    <string name="toast_bluetooth_not_supported">Dis Grät cha kei Bluetooth – die App funktioniert do nöd.</string>
+    <string name="action_restart_app">App neu starte</string>
+    <string name="action_copy_log">Protokoll kopiere</string>
+    <string name="error_details_label">Details azeige</string>
+    <string name="dialog_permissions_title">Berechtigunge brucht</string>
+    <string name="dialog_permissions_message">Zum Grät ide Nöchi finde, brucht d\'App Zuegriff uf Bluetooth und de Standort. Druck uf \'Iistellige öffne\' und erlaub beides.</string>
+    <string name="dialog_action_open_settings">Iistellige öffne</string>
+    <string name="dialog_action_cancel">Nöd jetzt</string>
+    <string name="dialog_clear_log_title">Verlauf lösche?</string>
+    <string name="dialog_clear_log_message">Das löscht alli gspeicherete Erkennig nümme rückgängig.</string>
+    <string name="dialog_action_clear_confirm">Jo, lösche</string>
+    <string name="toast_log_cleared">Fertig! Din Verlauf isch gleert worde.</string>
+    <string name="chooser_export_log">Erkennigsverlauf teile</string>
+    <string name="toast_export_error">Teile nöd möglich. Bitte nomol probiere.</string>
+    <string name="toast_scanning_in_background">De Scan lauft im Hintergrund witer.</string>
+    <string name="label_id_prefix">Kennig: %1$s</string>
+    <string name="label_hex_prefix">Details: %1$s</string>
+    <string name="label_type_prefix">Grätetyp: %1$s</string>
+    <string name="label_potential_prefix">Bekannt als: %1$s</string>
+    <string name="action_theme">Design</string>
+    <string name="theme_system">Systemstandard</string>
+    <string name="theme_light">Hell</string>
+    <string name="theme_dark">Dunkel</string>
+    <string name="error_occurred_title">Oops – Öpis isch schief gloffe</string>
+    <string name="error_occurred_description">D\'App het es unerwartets Problem gha. Din Verlauf isch sicher. Druck uf \'Neu starte\'.</string>
+    <string name="title_github">Quelltext</string>
+    <string name="summary_github">Quelltext uf GitHub azeige</string>
+    <string name="reset_success">Datebank uf Standard zruggsetzt</string>
+    <string name="error_unknown">Unbekannte Fehler</string>
+    <string name="type_apple">Apple</string>
+    <string name="type_samsung">Samsung</string>
+    <string name="type_tile">Tile</string>
+    <string name="type_other">Anderi</string>
+    <string name="error_file_io">Datei-Fähler (E/A)</string>
+    <string name="detection_reason_signature_match">Bekannti Spionage-Signatur entdeckt</string>
+    <string name="label_rssi_unit">Signal: %1$d</string>
+    <string name="label_maker_prefix">Hersteller: %1$s</string>
+    <string name="not_available">N.V.</string>
+    <string name="device_list_format">(%1$s)</string>
+    <string name="dialog_edit_tracker_title">Tracker bearbeite</string>
+    <string name="confirm_delete_tracker">Bisch sicher, dass de Tracker lösche wotsch?</string>
+    <string name="delete_success">Tracker glöscht</string>
+    <string name="update_success">Tracker aktualisiert</string>
+    <string name="company_unknown_plain">Unbekannte Hersteller</string>
+    <string name="default_discovered_name">Neu entdeckte Tracker</string>
+    <string name="clipboard_label_log">ZwüscheablagProtokoll</string>
+
+    <string name="summary_share_history">Erkennigsverlauf als TXT-Datei teile</string>
+    <string name="summary_clear_history">Alli gspeicherete Erkennige für immer lösche</string>
+    <string name="hint_manufacturer_id">Hersteller-ID (Hex, z.B. 0x004C)</string>
+    <string name="hint_manufacturer_name">Herstellername (z.B. Apple, Inc.)</string>
+    <string name="hint_brand_name">Marke/Allgemeine Name (z.B. AirTag)</string>
+    <string name="hint_compatible_devices">Kompatibli Grät (mit Komma trenne)</string>
+    <string name="label_tracker_type">Tracker-Typ</string>
+    <string name="discovery_secondary_info_v2">ID: %1$s | Signal: %2$d</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_title">Willkomme bi NoTrace</string>
+    <string name="onboarding_description">Din Privatsphäre-Hälfer zum findä vo verstekte Spionagegrät und Tracker ide Nöchi. Blieb sicher und informiert.</string>
+    <string name="onboarding_warning_title">Wichtige Sicherheitshiwiis</string>
+    <string name="onboarding_warning_text">Die App isch es Erkennigs-Werchzüg und chan ab und zue Fehlalarm azeige (wie VR-Brille oder einigi Smart-Grät). Mit de Nutzig vo de App erklärsch dich iverstande, die Informatione verantwortigsbewusst z\'bruche und NIEMER uf de Basis vo Erkennigsergebnis z\'belästige oder azgriife.</string>
+    <string name="onboarding_agreement_checkbox">Ich erklär mich iverstande, die App verantwortigsbewusst z\'bruche und nöd z\'bruche, zum andere weh z\'tue.</string>
+    <string name="onboarding_button_accept">Los gohts</string>
+</resources>
