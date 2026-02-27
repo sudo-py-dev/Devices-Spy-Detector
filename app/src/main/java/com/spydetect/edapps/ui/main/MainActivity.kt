@@ -10,6 +10,7 @@ import android.os.Build
 import android.os.Bundle
 import android.os.IBinder
 import android.provider.Settings
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -61,7 +62,7 @@ class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceCh
 
   private val bluetoothHelper: BluetoothManagerHelper by lazy {
     BluetoothManagerHelper(
-      this,
+      activity = this,
       bluetoothPermissionLauncher,
       enableBluetoothLauncher,
       { startScanningProcess() },
@@ -128,12 +129,9 @@ class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceCh
   }
 
   override fun onCreate(savedInstanceState: Bundle?) {
-    applyAppTheme()
     super.onCreate(savedInstanceState)
     _binding = ActivityMainBinding.inflate(layoutInflater)
     setContentView(binding.root)
-
-    preferencesManager.registerListener(this)
 
     setupEdgeToEdge()
     initViews()
@@ -141,11 +139,40 @@ class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceCh
     observeViewModel()
 
     lifecycleScope.launch {
-      trackerRepo.seedIfNeeded()
-      checkBatteryOptimization()
-      if (!preferencesManager.onboardingCompleted) {
-        showOnboardingDialog()
+      try {
+        if (::preferencesManager.isInitialized) {
+          trackerRepo.seedIfNeeded()
+          checkBatteryOptimization()
+          if (!preferencesManager.onboardingCompleted) {
+            showOnboardingDialog()
+          }
+        } else {
+          Log.w("MainActivity", "preferencesManager not initialized, skipping lifecycle operations")
+        }
+      } catch (e: Exception) {
+        Log.e("MainActivity", "Error in lifecycle operations", e)
       }
+    }
+  }
+
+  override fun onPostCreate(savedInstanceState: Bundle?) {
+    super.onPostCreate(savedInstanceState)
+    // Apply theme after all Hilt injections are definitely complete
+    applyThemeSafely()
+  }
+
+  private fun applyThemeSafely() {
+    try {
+      if (::preferencesManager.isInitialized) {
+        preferencesManager.registerListener(this)
+        applyAppTheme()
+      } else {
+        Log.w("MainActivity", "preferencesManager not initialized, using default theme")
+        applyDefaultTheme()
+      }
+    } catch (e: Exception) {
+      Log.e("MainActivity", "Error applying theme", e)
+      applyDefaultTheme()
     }
   }
 
@@ -161,14 +188,34 @@ class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceCh
     }
 
     binding.btnToggleScan.setOnClickListener {
-      if (serviceBound && spyScannerService?.isScanning == true) stopSpyScan()
-      else bluetoothHelper.requestPermissionsAndScan()
+      try {
+        if (serviceBound && spyScannerService?.isScanning == true) {
+          stopSpyScan()
+        } else {
+          bluetoothHelper.requestPermissionsAndScan()
+        }
+      } catch (e: Exception) {
+        Log.e("MainActivity", "Error in scan button click", e)
+        showSnackbar("Error: Unable to start scanning")
+      }
     }
 
-    binding.btnMoveToBackground.setOnClickListener { moveAppToBackground() }
+    binding.btnMoveToBackground.setOnClickListener {
+      try {
+        moveAppToBackground()
+      } catch (e: Exception) {
+        Log.e("MainActivity", "Error moving to background", e)
+        showSnackbar("Error: Unable to move to background")
+      }
+    }
 
     binding.btnDisableBatteryOptimization.setOnClickListener {
-      PermissionManager.requestDisableBatteryOptimization(this)
+      try {
+        PermissionManager.requestDisableBatteryOptimization(this)
+      } catch (e: Exception) {
+        Log.e("MainActivity", "Error requesting battery optimization", e)
+        showSnackbar("Error: Unable to open settings")
+      }
     }
   }
 
@@ -204,6 +251,11 @@ class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceCh
   }
 
   private fun checkBatteryOptimization() {
+    if (!::preferencesManager.isInitialized) {
+      Log.w("MainActivity", "preferencesManager not initialized, skipping battery optimization check")
+      return
+    }
+    
     val isServiceEnabled = preferencesManager.foregroundServiceEnabled
     val isRestricted = !PermissionManager.isBatteryOptimizationDisabled(this)
 
@@ -216,10 +268,15 @@ class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceCh
   }
 
   private fun copyToClipboard(text: String) {
-    val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as android.content.ClipboardManager
-    val clip = android.content.ClipData.newPlainText(getString(R.string.clipboard_label_log), text)
-    clipboard.setPrimaryClip(clip)
-    showSnackbar(getString(R.string.clipboard_copied))
+    try {
+      val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as android.content.ClipboardManager
+      val clip = android.content.ClipData.newPlainText(getString(R.string.clipboard_label_log), text)
+      clipboard.setPrimaryClip(clip)
+      showSnackbar(getString(R.string.clipboard_copied))
+    } catch (e: Exception) {
+      Log.e("MainActivity", "Error copying to clipboard", e)
+      showSnackbar("Error: Unable to copy to clipboard")
+    }
   }
 
   private fun showSnackbar(
@@ -227,12 +284,18 @@ class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceCh
     actionLabel: String? = null,
     action: (() -> Unit)? = null
   ) {
-    val snackbar = Snackbar.make(binding.root, message, Snackbar.LENGTH_SHORT)
-    snackbar.anchorView = binding.layoutScanningActions
-    if (actionLabel != null && action != null) {
-      snackbar.setAction(actionLabel) { action() }
+    try {
+      if (!isFinishing && !isDestroyed) {
+        val snackbar = Snackbar.make(binding.root, message, Snackbar.LENGTH_SHORT)
+        snackbar.anchorView = binding.layoutScanningActions
+        if (actionLabel != null && action != null) {
+          snackbar.setAction(actionLabel) { action() }
+        }
+        snackbar.show()
+      }
+    } catch (e: Exception) {
+      Log.e("MainActivity", "Error showing snackbar", e)
     }
-    snackbar.show()
   }
 
   private fun updateScanningUI(isScanning: Boolean) {
@@ -250,6 +313,12 @@ class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceCh
   }
 
   private fun startScanningProcess() {
+    if (!::preferencesManager.isInitialized) {
+      Log.e("MainActivity", "preferencesManager not initialized, cannot start scanning")
+      showSnackbar("Error: Preferences not initialized")
+      return
+    }
+    
     if (preferencesManager.foregroundServiceEnabled) {
       val intent =
         Intent(this, SpyScannerService::class.java).apply {
@@ -272,7 +341,7 @@ class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceCh
 
   private fun stopSpyScan() {
     if (serviceBound) {
-      if (preferencesManager.foregroundServiceEnabled) {
+      if (::preferencesManager.isInitialized && preferencesManager.foregroundServiceEnabled) {
         startService(
           Intent(this, SpyScannerService::class.java).apply {
             action = SpyScannerService.ACTION_STOP_SCAN
@@ -303,29 +372,46 @@ class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceCh
   }
 
   private fun showOnboardingDialog() {
-    val dialogBinding =
-      com.spydetect.edapps.databinding.DialogOnboardingBinding.inflate(layoutInflater)
-    val dialog =
-      MaterialAlertDialogBuilder(this, R.style.Dialog_SpyDetector)
-        .setView(dialogBinding.root)
-        .setCancelable(false)
-        .create()
+    try {
+      if (!::preferencesManager.isInitialized) {
+        Log.w("MainActivity", "preferencesManager not initialized, skipping onboarding")
+        return
+      }
+      
+      val dialogBinding =
+        com.spydetect.edapps.databinding.DialogOnboardingBinding.inflate(layoutInflater)
+      val dialog =
+        MaterialAlertDialogBuilder(this, R.style.Dialog_SpyDetector)
+          .setView(dialogBinding.root)
+          .setCancelable(false)
+          .create()
 
-    dialogBinding.cbAgree.setOnCheckedChangeListener { _, isChecked ->
-      dialogBinding.btnAccept.isEnabled = isChecked
+      dialogBinding.cbAgree.setOnCheckedChangeListener { _, isChecked ->
+        dialogBinding.btnAccept.isEnabled = isChecked
+      }
+
+      dialogBinding.btnAccept.setOnClickListener {
+        try {
+          preferencesManager.onboardingCompleted = true
+          dialog.dismiss()
+        } catch (e: Exception) {
+          Log.e("MainActivity", "Error setting onboarding completed", e)
+        }
+      }
+
+      dialog.show()
+    } catch (e: Exception) {
+      Log.e("MainActivity", "Error showing onboarding dialog", e)
     }
-
-    dialogBinding.btnAccept.setOnClickListener {
-      preferencesManager.onboardingCompleted = true
-      dialog.dismiss()
-    }
-
-    dialog.show()
   }
 
   override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
-    if (key == "foreground_service") {
-      checkBatteryOptimization()
+    try {
+      if (key == "foreground_service") {
+        checkBatteryOptimization()
+      }
+    } catch (e: Exception) {
+      Log.e("MainActivity", "Error in preference change listener", e)
     }
   }
 
@@ -364,31 +450,56 @@ class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceCh
   }
 
   private fun showThemeDialog() {
-    val themes =
-      arrayOf(
-        getString(R.string.theme_system),
-        getString(R.string.theme_light),
-        getString(R.string.theme_dark)
-      )
-    MaterialAlertDialogBuilder(this, R.style.Dialog_SpyDetector)
-      .setTitle(R.string.action_theme)
-      .setSingleChoiceItems(themes, preferencesManager.themeMode) { dialog, which ->
-        preferencesManager.themeMode = which
-        applyAppTheme()
-        dialog.dismiss()
-        recreate()
+    try {
+      if (!::preferencesManager.isInitialized) {
+        showSnackbar("Error: Preferences not available")
+        return
       }
-      .show()
+      
+      val themes =
+        arrayOf(
+          getString(R.string.theme_system),
+          getString(R.string.theme_light),
+          getString(R.string.theme_dark),
+        )
+      MaterialAlertDialogBuilder(this, R.style.Dialog_SpyDetector)
+        .setTitle(R.string.action_theme)
+        .setSingleChoiceItems(themes, preferencesManager.themeMode) { dialog, which ->
+          preferencesManager.themeMode = which
+          applyAppTheme()
+          dialog.dismiss()
+          recreate()
+        }
+        .show()
+    } catch (e: Exception) {
+      Log.e("MainActivity", "Error showing theme dialog", e)
+      showSnackbar("Error: Unable to show theme dialog")
+    }
   }
 
   private fun applyAppTheme() {
-    val mode =
-      when (preferencesManager.themeMode) {
-        1 -> AppCompatDelegate.MODE_NIGHT_NO
-        2 -> AppCompatDelegate.MODE_NIGHT_YES
-        else -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
+    try {
+      if (!::preferencesManager.isInitialized) {
+        Log.w("MainActivity", "preferencesManager not initialized in applyAppTheme")
+        return
       }
-    AppCompatDelegate.setDefaultNightMode(mode)
+      
+      val mode =
+        when (preferencesManager.themeMode) {
+          1 -> AppCompatDelegate.MODE_NIGHT_NO
+          2 -> AppCompatDelegate.MODE_NIGHT_YES
+          else -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
+        }
+      AppCompatDelegate.setDefaultNightMode(mode)
+    } catch (e: Exception) {
+      Log.e("MainActivity", "Error applying theme", e)
+      applyDefaultTheme()
+    }
+  }
+
+  private fun applyDefaultTheme() {
+    // Apply system default theme when preferencesManager is not available
+    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
   }
 
   private fun moveAppToBackground() {

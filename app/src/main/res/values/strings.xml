@@ -89,14 +89,14 @@
     </string-array>
     <string name="notification_channel_alerts_name">Alerts</string>
     <string name="notification_channel_alerts_description">Devices detection alerts</string>
-    <string name="notification_channel_scanner_name">Scanner</string>
-    <string name="notification_channel_scanner_description">Background scanning status</string>
+    <string name="notification_channel_scanner_name">Privacy Protection</string>
+    <string name="notification_channel_scanner_description">Active spy device monitoring</string>
     <string name="notification_detected_title">@string/notification_title_devices_detected</string>
     <string name="notification_detected_text">%1$s nearby (Signal: %2$d)</string>
     <string name="notification_expanded_text">Device: %1$s\nMaker: %4$s\nSignal: %2$d</string>
     <string name="notification_unknown_device">Unknown device</string>
-    <string name="notification_service_title">Scanning nearby</string>
-    <string name="notification_service_text">Tap to open</string>
+    <string name="notification_service_title">🛡️ Spy Detection Active</string>
+    <string name="notification_service_text">Protecting your privacy</string>
     <string name="action_stop">Stop</string>
     <string name="alert_battery_optimization_title">Background Optimization</string>
     <string name="alert_battery_optimization_message">For reliable background scanning, please disable battery optimization for this app.</string>
@@ -111,6 +111,7 @@
     <string name="error_log_copied">Error log copied to clipboard!</string>
     <string name="clipboard_label_log_line">SpyDetectorLogLine</string>
     <string name="toast_bluetooth_required">Please turn on Bluetooth to start scanning.</string>
+    <string name="toast_bluetooth_not_available">Bluetooth is not available on this device.</string>
     <string name="toast_bluetooth_not_supported">Your device doesn\'t support Bluetooth - this app won\'t work on it.</string>
     <string name="action_restart_app">Restart App</string>
     <string name="action_copy_log">Copy Log</string>

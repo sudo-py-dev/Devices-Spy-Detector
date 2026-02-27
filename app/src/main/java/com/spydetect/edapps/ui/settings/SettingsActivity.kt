@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.View
 import android.widget.FrameLayout
 import android.widget.Toast
@@ -93,36 +94,58 @@ class SettingsActivity : AppCompatActivity() {
 
       cooldownPref?.summaryProvider =
         Preference.SummaryProvider<SeekBarPreference> { preference ->
-          getString(R.string.summary_cooldown, preference.value)
+          try {
+            getString(R.string.summary_cooldown, preference.value)
+          } catch (e: Exception) {
+            Log.e("SettingsActivity", "Error in cooldown summary provider", e)
+            "Error"
+          }
         }
 
       cooldownPref?.setOnPreferenceChangeListener { pref, newValue ->
-        (pref as SeekBarPreference).value = newValue as Int
-        pref.summary = getString(R.string.summary_cooldown, newValue)
-        true
+        try {
+          val value = newValue as? Int ?: return@setOnPreferenceChangeListener false
+          (pref as SeekBarPreference).value = value
+          pref.summary = getString(R.string.summary_cooldown, value)
+          true
+        } catch (e: Exception) {
+          Log.e("SettingsActivity", "Error in cooldown preference change", e)
+          false // Prevent invalid change
+        }
       }
 
       rssiPref?.summaryProvider =
         Preference.SummaryProvider<SeekBarPreference> { preference ->
+          try {
+            val resId =
+              when (preference.value) {
+                in 1..SENSITIVITY_LOW_MAX -> R.string.sensitivity_low
+                in (SENSITIVITY_LOW_MAX + 1)..SENSITIVITY_MEDIUM_MAX -> R.string.sensitivity_medium
+                else -> R.string.sensitivity_high
+              }
+            getString(resId)
+          } catch (e: Exception) {
+            Log.e("SettingsActivity", "Error in sensitivity summary provider", e)
+            "Error"
+          }
+        }
+
+      rssiPref?.setOnPreferenceChangeListener { pref, newValue ->
+        try {
+          val value = newValue as? Int ?: return@setOnPreferenceChangeListener false
+          (pref as SeekBarPreference).value = value
           val resId =
-            when (preference.value) {
+            when (value) {
               in 1..SENSITIVITY_LOW_MAX -> R.string.sensitivity_low
               in (SENSITIVITY_LOW_MAX + 1)..SENSITIVITY_MEDIUM_MAX -> R.string.sensitivity_medium
               else -> R.string.sensitivity_high
             }
-          getString(resId)
+          pref.summary = getString(resId)
+          true
+        } catch (e: Exception) {
+          Log.e("SettingsActivity", "Error in sensitivity preference change", e)
+          false // Prevent invalid change
         }
-
-      rssiPref?.setOnPreferenceChangeListener { pref, newValue ->
-        val value = newValue as Int
-        val resId =
-          when (value) {
-            in 1..SENSITIVITY_LOW_MAX -> R.string.sensitivity_low
-            in (SENSITIVITY_LOW_MAX + 1)..SENSITIVITY_MEDIUM_MAX -> R.string.sensitivity_medium
-            else -> R.string.sensitivity_high
-          }
-        pref.summary = getString(resId)
-        true
       }
 
       fun refreshLanguageSummary() {

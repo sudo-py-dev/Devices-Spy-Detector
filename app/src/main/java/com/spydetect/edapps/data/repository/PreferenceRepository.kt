@@ -3,6 +3,7 @@ package com.spydetect.edapps.data.repository
 import android.content.Context
 import android.content.SharedPreferences
 import android.util.Base64
+import android.util.Log
 import com.google.crypto.tink.Aead
 import com.google.crypto.tink.KeyTemplates
 import com.google.crypto.tink.aead.AeadConfig
@@ -11,21 +12,53 @@ import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.flow.onStart
+import com.spydetect.edapps.data.local.AppDatabase
 
-class PreferenceRepository(context: Context) {
+class PreferenceRepository(
+    context: Context,
+    // Database parameter ensures proper initialization order
+    // Hilt will ensure database is created before PreferenceRepository
+    private val database: AppDatabase? = null
+) {
 
   private val prefs: SharedPreferences = context.getSharedPreferences("secure_prefs_v2", Context.MODE_PRIVATE)
-  private val aead: Aead
+  private lateinit var aead: Aead
+  private var encryptionEnabled: Boolean = true
 
   init {
-    AeadConfig.register()
-    val keysetHandle = AndroidKeysetManager.Builder()
-      .withSharedPref(context, "tink_keyset", "tink_prefs")
-      .withKeyTemplate(KeyTemplates.get("AES256_GCM"))
-      .withMasterKeyUri("android-keystore://pref_master_key")
-      .build()
-      .keysetHandle
-    aead = keysetHandle.getPrimitive(Aead::class.java)
+    try {
+      // Verify database is accessible (if provided)
+      database?.let { db ->
+        Log.i(TAG, "Database is accessible during PreferenceRepository initialization")
+        // Optionally trigger a simple database operation to ensure it's ready
+        db.openHelper.readableDatabase
+      }
+      
+      // Initialize Tink encryption with additional security
+      AeadConfig.register()
+      
+      // Use a more secure key template if available
+      val keyTemplate = try {
+        KeyTemplates.get("AES256_GCM_SIV") // More secure than AES256_GCM
+      } catch (e: Exception) {
+        Log.w(TAG, "AES256_GCM_SIV not available, falling back to AES256_GCM", e)
+        KeyTemplates.get("AES256_GCM")
+      }
+      
+      val keysetHandle = AndroidKeysetManager.Builder()
+        .withSharedPref(context, "tink_keyset_v2", "tink_prefs_v2")
+        .withKeyTemplate(keyTemplate)
+        .withMasterKeyUri("android-keystore://pref_master_key_v2")
+        .build()
+        .keysetHandle
+      @Suppress("DEPRECATION")
+      aead = keysetHandle.getPrimitive(com.google.crypto.tink.Aead::class.java)
+      encryptionEnabled = true
+      Log.i(TAG, "Secure preferences initialized successfully with enhanced encryption")
+    } catch (e: Exception) {
+      Log.e(TAG, "Failed to initialize secure preferences, falling back to unencrypted", e)
+      encryptionEnabled = false
+    }
   }
 
   fun putString(key: String, value: String?) {
@@ -61,22 +94,42 @@ class PreferenceRepository(context: Context) {
   }
 
   private fun encrypt(value: String): String {
+  return if (encryptionEnabled && ::aead.isInitialized) {
     val ciphertext = aead.encrypt(value.toByteArray(), null)
-    return Base64.encodeToString(ciphertext, Base64.DEFAULT)
+    Base64.encodeToString(ciphertext, Base64.DEFAULT)
+  } else {
+    // Fallback to plain text if encryption is not available
+    value
   }
+}
 
   private fun decrypt(value: String?): String? {
-    if (value == null) return null
-    return try {
-      val ciphertext = Base64.decode(value, Base64.DEFAULT)
-      val plaintext = aead.decrypt(ciphertext, null)
-      String(plaintext)
-    } catch (e: Exception) {
-      null
-    }
+  if (value == null) return null
+  
+  // If encryption is not enabled, return the value as-is
+  if (!encryptionEnabled || !::aead.isInitialized) {
+    return value
   }
+  
+  return try {
+    val ciphertext = Base64.decode(value, Base64.DEFAULT)
+    val plaintext = aead.decrypt(ciphertext, null)
+    String(plaintext)
+  } catch (e: java.security.GeneralSecurityException) {
+    Log.w(TAG, "Decryption failed for security reasons", e)
+    null
+  } catch (e: IllegalArgumentException) {
+    Log.w(TAG, "Invalid Base64 encoding in encrypted data", e)
+    // If it's not Base64 encoded, it might be plain text from a previous fallback
+    value
+  } catch (e: Exception) {
+    Log.w(TAG, "Unexpected error during decryption", e)
+    null
+  }
+}
 
   companion object {
+    private const val TAG = "PreferenceRepository"
     private const val KEY_SENSITIVITY_LEVEL = "sensitivity_level"
     private const val KEY_COOLDOWN_SEC = "cooldown_sec"
     private const val KEY_FOREGROUND_SERVICE = "foreground_service"

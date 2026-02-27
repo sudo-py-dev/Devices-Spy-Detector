@@ -29,13 +29,7 @@ object AppModule {
     @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): AppDatabase {
-        return Room.databaseBuilder(
-            context,
-            AppDatabase::class.java,
-            AppDatabase.DATABASE_NAME
-        )
-        .fallbackToDestructiveMigration(true)
-        .build()
+        return AppDatabase.createSecureDatabase(context)
     }
 
     @Provides
@@ -48,17 +42,18 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun providePreferenceRepository(@ApplicationContext context: Context): PreferenceRepository {
-        return PreferenceRepository(context)
+    fun providePreferenceRepository(
+        @ApplicationContext context: Context,
+        db: AppDatabase
+    ): PreferenceRepository {
+        // Ensure database is initialized before creating PreferenceRepository
+        // This prevents race conditions and ensures proper initialization order
+        return PreferenceRepository(context, db)
     }
 
     @Provides
     @Singleton
-    fun provideSpyRepository(spyDao: SpyDao): SpyRepository = SpyRepository(spyDao)
-
-    @Provides
-    @Singleton
-    fun provideScannerStatusRepository(): ScannerStatusRepository = ScannerStatusRepository()
+    fun provideJson(): Json = Json { ignoreUnknownKeys = true }
 
     @Provides
     @Singleton
@@ -70,12 +65,16 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideNotificationHelper(@ApplicationContext context: Context): NotificationHelper =
-        NotificationHelper(context)
+    fun provideSpyRepository(spyDao: SpyDao): SpyRepository = SpyRepository(spyDao)
 
     @Provides
     @Singleton
-    fun provideJson(): Json = Json { ignoreUnknownKeys = true }
+    fun provideScannerStatusRepository(): ScannerStatusRepository = ScannerStatusRepository()
+
+    @Provides
+    @Singleton
+    fun provideNotificationHelper(@ApplicationContext context: Context): NotificationHelper =
+        NotificationHelper(context)
 
     @Provides
     @Singleton

@@ -98,7 +98,6 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.10.0'
 
     // Security
-    // Security
     implementation 'com.google.crypto.tink:tink-android:1.16.0'
     
     // Testing

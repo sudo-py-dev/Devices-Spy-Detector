@@ -87,14 +87,14 @@
     </string-array>
     <string name="notification_channel_alerts_name">Warnige</string>
     <string name="notification_channel_alerts_description">Warnige zur Gräte-Erkennig</string>
-    <string name="notification_channel_scanner_name">Scanner</string>
-    <string name="notification_channel_scanner_description">Status vom Hintergrund-Scan</string>
+    <string name="notification_channel_scanner_name">Datenschutz</string>
+    <string name="notification_channel_scanner_description">Aktivi Spionagegräte-Überwachig</string>
     <string name="notification_detected_title">@string/notification_title_devices_detected</string>
     <string name="notification_detected_text">%1$s ide Nächi (Signal: %2$d)</string>
     <string name="notification_expanded_text">Grät: %1$s\nHersteller: %4$s\nSignal: %2$d</string>
     <string name="notification_unknown_device">Unbekannts Grät</string>
-    <string name="notification_service_title">Scan läuft…</string>
-    <string name="notification_service_text">Drucke zum Öffne</string>
+    <string name="notification_service_title">🛡️ Spionage-Schutz Aktiv</string>
+    <string name="notification_service_text">Schützt Ii Privatsphäre</string>
     <string name="action_stop">Stopp</string>
     <string name="alert_battery_optimization_title">Hintergrund-Optimierig</string>
     <string name="alert_battery_optimization_message">Für e zuverlässige Scan im Hintergrund, nimm d\'Akku-Optimierig für die App use.</string>
